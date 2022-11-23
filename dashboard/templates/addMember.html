@@ -1,0 +1,230 @@
+{% load static %}
+<html>
+<head>
+	<title>Add a New Member</title>
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="OP Registration Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Redressed&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+
+
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+	<link href="{% static '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' %}" rel="stylesheet">
+	<!--//fonts-->
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <img src="{% static 'logo/logo.png' %}"/>
+            <a class="navbar-brand" id="brandId" href="#" style="padding-left:2%; font-family:'Redressed'; text-transform: 'capitlaize'; font-size:190%;">Company Name Will Be Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              </ul>
+                <form class="d-flex" action="{% url 'index' %}">
+                    <button class="btn btn-outline-success" type="submit">Log-out</button>
+                </form>
+            </div>
+          </div>
+    </nav>
+    <marquee direction="right" style="background-color: black;color: yellow; font-size: 17px; height: 25px;">Inventory Management System</marquee>
+	<!--background-->
+	<!--<h1 style="color: cyan; margin-top: 0px; margin-bottom: 0px;">Add a New Member</h1>-->
+	<div class="register-form-w3layouts" style="background: rgba(20,20,20, 0.8); margin-top: 12px;">
+		<!-- Form starts here -->
+		<form action="?" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<h3 class="sub-heading-agileits">Add a New Member</h3>
+			<div style="background-color:'white'">
+				<input type="file" name="myPhoto"/>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="number" name="memberId" placeholder="Member ID" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="memberName" placeholder="Member Name" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="gurdianName" placeholder="Gurdian Name" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="number" name="phoneNo" placeholder="Phone Number" required="" maxlength="10" minlength="10">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<select class="form-control" name="gender">
+						<option>Gender</option>
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="Other">Other</option>
+					</select>
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<select class="form-control" name="category">
+						<option>Category</option>
+						<option value="Cat1">Option 1</option>
+						<option value="Cat2">Option 2</option>
+						<option value="Cat3">Option 3</option>
+					</select>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="landHolding" placeholder="Land Holding (ACER)" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<select class="form-control" name="memberType">
+						<option>Member Type</option>
+						<option value="JLG">JLG</option>
+						<option value="SHG">SHG</option>
+						<option value="Fed">Fed</option>
+						<option value="VWC">VWC</option>
+					</select>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<select class="form-control" name="familyMember">
+						<option>Family Members</option>
+						<option value="#">Option 1</option>
+						<option value="#">Option 2</option>
+						<option value="#">Option 3</option>
+						<option value="#">Option 4</option>
+					</select>
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="block" placeholder="Block" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="village" placeholder="Village" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="district" placeholder="District" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="state" placeholder="State" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="cropName" placeholder="Crop Name" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="irrigationSource" placeholder="Irrigation Source " required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="bankName" placeholder="Bank Name" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="ifsc" placeholder="IFSC CODE" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="kccLimit" placeholder="KCC Limit" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" name="aadharNumber" placeholder="AADHAR (e.g, 1234 1234 1234)" required="" MAXLENGTH='14' minlength='14'>
+				</div>
+			</div>
+			<!--<div class="field-agileinfo-spc form-w3-agile-text">
+				<textarea name="Message" placeholder="Address..."></textarea>
+			</div>
+			<div class="clear"></div>
+			<h2 class="sub-heading-agileits">Emergency Contact Details</h2>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="Name" placeholder="First Name" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="Name" placeholder="Last Name" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="Relationship" placeholder="Relationship" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="Phone no" placeholder="Phone Number" required="">
+				</div>
+			</div>
+			<div class="radio-section">
+				<h6>Taking any medications currently</h6>
+				<ul class="radio-buttons-w3-agileits">
+					<li>
+						<input type="radio" id="a-option" name="selector1">
+						<label for="a-option">Yes</label>
+						<div class="check"></div>
+					</li>
+					<li>
+						<input type="radio" id="b-option" name="selector1">
+						<label for="b-option">No</label>
+						<div class="check">
+							<div class="inside"></div>
+						</div>
+					</li>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			<div class="field-agileinfo-spc form-w3-agile-text">
+				<textarea name="Message" placeholder="If you are taking please list them here.."></textarea>
+			</div>-->
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear Form">
+			<div class="clear"></div>
+		</form>
+		<!--// Form starts here -->
+	</div>
+	<!--copyright-->
+
+	<!--//copyright-->
+	<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- Calendar Js -->
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Redressed&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <style>
+    body{
+
+    }
+        @media screen (max-width:320px){
+            #brandId{
+                    font-size:70%;
+                }
+        }
+    </style>
+
+
+
+    <title>My Dashboard</title>
+  </head>
+  <body style="background-image: url('/static/dashBack.jpg'); background-size: 100%;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" id="brandId" href="#" style="font-family:'Redressed'; text-transform: 'capitlaize'; font-size:190%;">Welcome To Your Dashboard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              </ul>
+                <form class="d-flex" action="{% url 'index' %}">
+                    <button class="btn btn-outline-primary" type="view">Log-out</button>
+                </form>
+
+            </div>
+          </div>
+    </nav>
+    <marquee direction="right" style="background-color: black;color: yellow; font-size: 17px; height: 25px;">Inventory Management System</marquee>
+    <div class="row" style="padding: 3%;">
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+        <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+          <div class="card-body">
+            <h4 class="card-title" style="text-align: center; color: black; background-color: rgb(240,255,240, 0.3);">Add Sale Products</h4>
+            <p class="card-text" style="text-align: center; color: white; font-size: 18px;">Add your stock here.<br> And also update it. </p>
+            <center>
+              <a href="{% url 'addSaleProduct' %}">
+                  <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:35%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Add Products</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+        <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+          <div class="card-body">
+            <h4 class="card-title" style="text-align: center; color: black; background-color: rgb(240,255,240, 0.3);">Stock Report</h4>
+            <p class="card-text" style="text-align: center; color: white; font-size: 18px;">Update your stock! including opening balance, closing balance and current balance.</p>
+            <center>
+              <a href="{% url 'updateStock' %}">
+                  <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:35%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Check Stock</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+        <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+          <div class="card-body">
+            <h4 class="card-title" style="text-align: center; color: black; background-color: rgb(240,255,240, 0.3);">View Sale Report</h4>
+            <p class="card-text" style="text-align: center; color: white; font-size: 18px;">Check sold product here. <br> View your today's product selling  report.</p>
+            <center>
+              <a href="{% url 'viewSaleReport' %}">
+                  <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">View</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+        <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+          <div class="card-body">
+            <h4 class="card-title" style="text-align: center; color: black; background-color: rgb(240,255,240, 0.3);">Add Purchase</h4>
+            <p class="card-text" style="text-align: center; color: white; font-size: 18px;">Add your purchase !!!<br> It will automatically upto date. </p>
+            <center>
+              <a href="{% url 'addPurchase' %}">
+                  <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:35%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Add Purchase</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+        <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+          <div class="card-body">
+            <h4 class="card-title" style="text-align: center; color: black; background-color: rgb(240,255,240, 0.3);">View Purchase</h4>
+            <p class="card-text" style="text-align: center; color: white; font-size: 18px;">Check your purchase report from here !!!<br> It will automatically upto date. </p>
+            <center>
+              <a href="{% url 'viewPurchase' %}">
+                  <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:35%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Check Stock</button>
+              </a>
+            </center>
+          </div>
+        </div>
+      </div>
+        <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">View Products</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;">Let's see the remaining stock. Here you can also perform edit & delete operation.   </p>
+                <center>
+                  <a href="{% url 'viewProduct' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">View</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+
+
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">Add Member</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;">After successfully adding a member you can use "View Member" for checking.  </p>
+                <center>
+                  <a href="{% url 'addMember' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Add</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+
+      <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">View Member</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;">All our member is here !!! <br> You can check any member from here. </p>
+                <center>
+                  <a href="{% url 'viewMember' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">View</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">Add a Issued Share Certificate</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;"> Issued Share Certificate !!! <br> Add Issues .  </p>
+                <center>
+                  <a href="{% url 'addShareCertificate' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Add</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">View Issued Share Certificate</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;"> Issued Share Certificate !!! <br> View Issues .  </p>
+                <center>
+                  <a href="{% url 'shareCertificate' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">View</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; color:black; background-color: rgb(240,255,240, 0.3);">Change Password</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size:18px;"> If you think your password isn't strong or less secure change it from here! Always be secure.  </p>
+                <center>
+                  <a href="#">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">View</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-4" style="margin-bottom: 2%;">
+            <div class="card" style="background: rgba(10,10,10,0.6); border: 3px solid white;">
+              <div class="card-body">
+                <h4 class="card-title" style="text-align: center; background-color: rgb(240,255,240, 0.3); color: black;">Sale a Product</h4>
+                <p class="card-text" style="text-align: center; color: white; font-size: 18px;">For selling any products use this. <br> Selling report automatically updated.</p>
+                <center>
+                  <a href="{% url 'selectSale' %}">
+                    <button style="background: #0275d8; font-size:18px; border: 2px solid #0275d8; border-radius: 15px; padding:1%; width:25%; color: white;" onmouseleave="style.background='#0275d8'" onmouseover="style.background='none'">Sale</button>
+                  </a>
+                </center>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

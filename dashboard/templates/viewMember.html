@@ -1,0 +1,124 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Redressed&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>View Products</title>
+  </head>
+  <body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="width: 150%;">
+          <div class="container-fluid">
+            <img src="{% static 'logo/logo.png' %}"/>
+            <a class="navbar-brand" id="brandId" href="#" style="padding-left:2%; font-family:'Redressed'; text-transform: 'capitlaize'; font-size:190%;">Company Name Will Be Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              </ul>
+                <form class="d-flex" action="{% url 'index' %}">
+                    <button class="btn btn-outline-success" type="submit">Log-out</button>
+                </form>
+                <form class="d-flex mx-2" action="{% url 'yourDashboard' %}">
+                    <button class="btn btn-success" type="submit">Dashboard</button>
+                </form>
+                <form class="d-flex mx-2">
+                    <a href="https://restpack.io/html2pdf/save-as-pdf?private=true" target="_blank" rel="nofollow">
+                        <button class="btn btn-outline-success" type="button">Save this as PDF</button>
+                    </a>
+                </form>
+
+	            <script async src="https://restpack.io/save-as-pdf.js"></script>
+            </div>
+          </div>
+    </nav>
+
+<!--            <div class="dropdown" style="margin-right:3%; display: inline;">-->
+<!--            <input type="text" value="SELECT A CATEGORY: " class="form-control" name="productName" aria-label="Recipient's username" style="margin-right:1%; width:20%; background: transparent; border: none; color: black; text-align: center; font-size: 19px; display: inline;" readonly>-->
+<!--                <form style="display: inline; margin-bottom: 3px;" method="POST" action="?">-->
+<!--                    {% csrf_token %}-->
+<!--                    <select name="category" class="btn btn-info" aria-label=".form-select-sm example" style="display: inline;">-->
+<!--                        <option selected disabled>&#45;&#45;SELECT CATAGORIES&#45;&#45;</option>-->
+<!--                        <option value="RAW MATERIAL">RAW MATERIAL</option>-->
+<!--                        <option value="PRODUCTS">PRODUCTS</option>-->
+<!--                    </select>-->
+<!--                    <button type="submit" class="btn btn-primary">View Here</button>-->
+<!--                </form>-->
+<!--            </div>-->
+
+            <div class="card" style="background:#E7FFFF; width: 150%; padding-left: 3px; margin-top: 10px;">
+
+                      <table class="table table-hover">
+                          <thead>
+                                <tr>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">MEMBER ID</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">MEMBER NAME</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">GURDIAN NAME</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">PHONE NO</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">GENDER</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">CATEGORY</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">LAND HOLDING (ACER)</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">MEMBER TYPE</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">FAMILY MEMBERS</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">BLOCK</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">VILLAGE</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">DISTRICT</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">STATE</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">CROP NAME</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">IRRIGATION SOURCE</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">KCC LIMIT</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">BANK NAME</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">IFSC CODE</th>
+                                  <th scope="col" style="text-align: center; vertical-align: middle;">AADHAR NUMBER</th>
+                                </tr>
+                          </thead>
+                          <tbody>
+                          {% for i in items %}
+                                <tr>
+                                  <th scope="row">{{ i.memberId }}</th>
+                                  <td>{{ i.memberName }}</td>
+                                  <td>{{ i.gurdianName }}</td>
+                                  <td>{{ i.phoneNo }}</td>
+                                  <td>{{ i.gender }}</td>
+                                  <td>{{ i.category }}</td>
+                                  <td>{{ i.landHolding }}</td>
+                                  <td>{{ i.memberType }}</td>
+                                  <td>{{ i.familyMember }}</td>
+                                  <td>{{ i.block }}</td>
+                                  <td>{{ i.village }}</td>
+                                  <td>{{ i.district }}</td>
+                                  <td>{{ i.state }}</td>
+                                  <td>{{ i.cropName }}</td>
+                                  <td>{{ i.irrigationSource }}</td>
+                                  <td>{{ i.kccLimit }}</td>
+                                  <td>{{ i.bankName }}</td>
+                                  <td>{{ i.ifscCode }}</td>
+                                  <td>{{ i.aadharNo }}</td>
+                                </tr>
+                          {% endfor %}
+                          </tbody>
+                    </table>
+          </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

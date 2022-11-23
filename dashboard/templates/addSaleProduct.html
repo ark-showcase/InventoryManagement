@@ -1,0 +1,374 @@
+{% load static %}
+<html>
+<head>
+	<title>Add a Products</title>
+	<!-- Meta tags -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="OP Registration Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Redressed&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+
+
+
+	<!-- //Meta tags -->
+	<!-- Stylesheet -->
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}" />
+	<link href="{% static 'css/style.css' %}" rel='stylesheet' type='text/css' />
+	<!-- //Stylesheet -->
+	<!--fonts-->
+	<link href="{% static '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600' %}" rel="stylesheet">
+	<!--//fonts-->
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <img src="{% static 'logo/logo.png' %}"/>
+            <a class="navbar-brand" id="brandId" href="#" style="padding-left:2%; font-family:'Redressed'; text-transform: 'capitlaize'; font-size:190%;">Company Name Will Be Here</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+              </ul>
+                <a href="{% url 'yourDashboard' %}">
+                    <button type="button" class="btn btn-outline-info">Go to Dashboard</button>
+                </a>
+<!--                <button type="submit" class="btn btn-info">Add Here</button>-->
+                <a href="{% url 'viewProduct' %}">
+                    <button type="button" class="btn mx-2 btn-info">View Products</button>
+                </a>
+            </div>
+          </div>
+    </nav>
+    <marquee direction="right" style="background-color: black;color: yellow; font-size: 17px; height: 25px;">Inventory Management System</marquee>
+
+
+        {% if itemSuccessfulllyAdded %}
+        <div class="alert alert-success" role="alert">
+            Your Product Successfully Added !!!
+        </div>
+    {% endif %}
+    {% if wrongInput %}
+        <div class="alert alert-danger" role="alert">
+            Please Provide a valid input !!!
+        </div>
+    {% endif %}
+
+
+
+
+
+
+
+	<!--background-->
+	<!--<h1 style="color: cyan; margin-top: 0px; margin-bottom: 0px;">Add a New Member</h1>-->
+	<div class="register-form-w3layouts" style="background: rgba(20,20,20, 0.8); margin-top: 12px;">
+		<!-- Form starts here -->
+		<form action="?" method="POST">
+			{% csrf_token %}
+			<h3 class="sub-heading-agileits">Add a Product</h3>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text1">
+					<input type="text" name="productName" placeholder="PRODUCT NAME" required="">
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="text" name="particulars" placeholder="PARTICULARS" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<select class="form-control" name="unit">
+						<option selected disabled>&#45;&#45;SELECT UNIT&#45;&#45;</option>-->
+                        <option value="KG">KG</option>
+                        <option value="TON">TON</option>
+                        <option value="QUINTAL">QUINTAL</option>
+                        <option value="LITRE">LITRE</option>
+					</select>
+				</div>
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="number" name="rate" placeholder="RATE" required="">
+				</div>
+			</div>
+			<div class="main-flex-w3ls-sectns">
+
+				<div class="field-agileinfo-spc form-w3-agile-text2">
+					<input type="number" name="stock" placeholder="STOCK" required="">
+				</div>
+			</div>
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<select class="form-control" name="category">-->
+<!--						<option>Category</option>-->
+<!--						<option value="Cat1">Option 1</option>-->
+<!--						<option value="Cat2">Option 2</option>-->
+<!--						<option value="Cat3">Option 3</option>-->
+<!--					</select>-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" name="landHolding" placeholder="Land Holding (ACER)" required="">-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<select class="form-control" name="memberType">-->
+<!--						<option>Member Type</option>-->
+<!--						<option value="JLG">JLG</option>-->
+<!--						<option value="SHG">SHG</option>-->
+<!--						<option value="Fed">Fed</option>-->
+<!--						<option value="VWC">VWC</option>-->
+<!--					</select>-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<select class="form-control" name="familyMember">-->
+<!--						<option>Family Members</option>-->
+<!--						<option value="#">Option 1</option>-->
+<!--						<option value="#">Option 2</option>-->
+<!--						<option value="#">Option 3</option>-->
+<!--						<option value="#">Option 4</option>-->
+<!--					</select>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<input type="text" name="block" placeholder="Block" required="">-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" name="village" placeholder="Village" required="">-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<input type="text" name="district" placeholder="District" required="">-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" name="state" placeholder="State" required="">-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<input type="text" name="cropName" placeholder="Crop Name" required="">-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" name="irrigationSource" placeholder="Irrigation Source " required="">-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" name="bankName" placeholder="Bank Name" required="">-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<input type="text" name="ifsc" placeholder="IFSC CODE" required="">-->
+<!--				</div>-->
+<!--			</div>-->
+<!--			<div class="main-flex-w3ls-sectns">-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text1">-->
+<!--					<input type="text" name="kccLimit" placeholder="KCC Limit" required="">-->
+<!--				</div>-->
+<!--				<div class="field-agileinfo-spc form-w3-agile-text2">-->
+<!--					<input type="text" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" name="aadharNumber" placeholder="AADHAR (e.g, 1234 1234 1234)" required="" MAXLENGTH='14' minlength='14'>-->
+<!--				</div>-->
+<!--			</div>-->
+			<input type="submit" value="Submit">
+			<input type="reset" value="Clear Form">
+			<div class="clear"></div>
+		</form>
+		<!--// Form starts here -->
+	</div>
+	<!--copyright-->
+
+	<!--//copyright-->
+	<script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+	<!-- Calendar Js -->
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script>
+		$(function () {
+			$("#datepicker,#datepicker1,#datepicker2,#datepicker3").datepicker();
+		});
+	</script>
+	<!-- //Calendar Js -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--    &lt;!&ndash; Required meta tags &ndash;&gt;-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+
+<!--    &lt;!&ndash; Bootstrap CSS &ndash;&gt;-->
+
+<!--    <link rel="preconnect" href="https://fonts.gstatic.com">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Redressed&display=swap" rel="stylesheet">-->
+
+<!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">-->
+
+<!--    <title>Add Products</title>-->
+<!--  </head>-->
+<!--  <body style="background-image: url('/static/addProduct.jpg'); background-size: cover;">-->
+<!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">-->
+<!--          <div class="container-fluid">-->
+<!--            <a class="navbar-brand" id="brandId" href="#" style="font-family:'Redressed'; font-size:190%;">Add Sale Product</a>-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--              <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--              <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+
+<!--              </ul>-->
+<!--                <form class="d-flex" action="{% url 'index' %}">-->
+<!--                    <button class="btn btn-outline-success" type="submit">Log-out</button>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--    </nav>-->
+<!--    <marquee direction="right" style="background-color: black;color: yellow; font-size: 17px; height: 25px;">Inventory Management System</marquee>-->
+<!--    {% if itemSuccessfulllyAdded %}-->
+<!--        <div class="alert alert-success" role="alert">-->
+<!--            Your Product Successfully Added !!!-->
+<!--        </div>-->
+<!--    {% endif %}-->
+<!--    {% if wrongInput %}-->
+<!--        <div class="alert alert-danger" role="alert">-->
+<!--            Please Provide a valid input !!!-->
+<!--        </div>-->
+<!--    {% endif %}-->
+<!--  <center>-->
+<!--      <div class="col-sm-7">-->
+<!--          <div class="card" style="background: rgba(10,10,10,0.9); border: 2px solid cyan;">-->
+<!--              <div class="card-body">-->
+<!--                <h4 class="card-title" style="background-color: none; color: white; font-family: berkshire swash;">Add Product Here</h4>-->
+<!--                  <p class="card-text">-->
+<!--                    <form action="?" method="POST">-->
+<!--                    {% csrf_token %}-->
+<!--                        <div class="input-group ">-->
+<!--                            <input type="text" class="form-control" name="productName" placeholder="Product Name" aria-label="Recipient's username" style="margin-right:1%;">-->
+<!--                            <textarea type="text" class="form-control" name="particulars" placeholder="Particulars" aria-label="Recipient's username" style="height: 20px;"></textarea>-->
+<!--                            <div class="dropdown">-->
+<!--                                <select name="unit" class="btn btn-outline-light form-select form-select-lg mx-2" aria-label=".form-select-sm example">-->
+<!--                                      <option selected>&#45;&#45;Select Unit&#45;&#45;</option>-->
+<!--                                      <option value="KG">KG</option>-->
+<!--                                      <option value="TON">TON</option>-->
+<!--                                      <option value="QUINTAL">QUINTAL</option>-->
+<!--                                      <option value="LITRE">LITRE</option>-->
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div style="text-align: center;">-->
+<!--                            <input type="number" name="rate" class="form-control" placeholder="Rate" aria-label="Recipient's username" style="margin-top: 8px; width: 30%; display: inline;"/>-->
+<!--                            <input type="number" name="stock" class="form-control" placeholder="Stock" aria-label="Recipient's username" style="width: 30%; display: inline;"/>-->
+<!--                        </div>-->
+
+<!--                        <hr>-->
+<!--                        <a href="{% url 'yourDashboard' %}">-->
+<!--                            <button type="button" class="btn btn-outline-info">Go to Dashboard</button>-->
+<!--                        </a>-->
+<!--                        <button type="submit" class="btn btn-info">Add Here</button>-->
+<!--                        <a href="{% url 'viewProduct' %}">-->
+<!--                            <button type="button" class="btn btn-outline-info">View Products</button>-->
+<!--                        </a>-->
+<!--                    </form>-->
+<!--                  </p>-->
+
+<!--              </div>-->
+<!--          </div>-->
+<!--      </div>-->
+
+
+<!--  </center>-->
+
+
+
+
+
+
+
+
+<!--    &lt;!&ndash; Optional JavaScript; choose one of the two! &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Option 1: Bootstrap Bundle with Popper &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>-->
+
+<!--    &lt;!&ndash; Option 2: Separate Popper and Bootstrap JS &ndash;&gt;-->
+<!--    &lt;!&ndash;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>-->
+<!--    &ndash;&gt;-->
+<!--  </body>-->
+<!--</html>-->
